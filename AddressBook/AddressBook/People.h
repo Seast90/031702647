@@ -5,12 +5,13 @@
 using namespace std;
 class People {
 public :
-	string Ori;
+	wstring Ori, name, address;
 	long long PhoneNumber;
 	People(){}
-	People(string __str) {
+	People(wstring __str) {
 		Ori = __str; 
 	}
 	void GetNumber();
 	void GetAddress();
+	void GetName();
 };

@@ -1,7 +1,7 @@
 #include "People.h"
 
 void People::GetNumber() {
-	string str = Ori;
+	wstring str = Ori;
 	int len = str.size();
 	for (int pos = 0; pos < len; pos++) {
 		if (str[pos] < '0' && str[pos] > '9') continue;
@@ -11,6 +11,20 @@ void People::GetNumber() {
 			cnt++;
 			PhoneNumber = 10 * PhoneNumber + str[_pos] - '0';
 		}
-		if (cnt == 11) break;
+		if (cnt == 11) {
+			Ori = Ori.substr(0, pos) + Ori.substr(pos + 11, len - pos - 10);
+			break;
+		}
 	}
+}
+void People::GetName() {
+	wstring str = Ori;
+	int pos = 0, len = str.size();
+	while (pos < len && str[pos] != ',' && str[pos] != '£¬')
+		pos++;
+	name = str.substr(0, pos);
+	address = str.substr(pos, len - pos + 1);
+}
+void People::GetAddress() {
+
 }
