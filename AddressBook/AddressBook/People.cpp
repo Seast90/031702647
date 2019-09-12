@@ -1,5 +1,12 @@
 #include "People.h"
-
+void People::ClearPunctuation() {
+	wstring str = address, s=L"";
+	int len = str.size();
+	for (int i = 0; i < len; i++)
+		if (str[i] != ',' && str[i] != L'£¬' && str[i] != '.' && str[i] != L'¡£')
+			s = s + str[i];
+	address = s;
+}
 void People::GetNumber() {
 	wstring str = Ori;
 	int len = str.size();
@@ -20,11 +27,24 @@ void People::GetNumber() {
 void People::GetName() {
 	wstring str = Ori;
 	int pos = 0, len = str.size();
-	while (pos < len && str[pos] != ',' && str[pos] != '£¬')
+	while (pos < len && str[pos] != L',' && str[pos] != '£¬')
 		pos++;
 	name = str.substr(0, pos);
 	address = str.substr(pos, len - pos + 1);
 }
 void People::GetAddress() {
 
+}
+
+void People::Print() {
+	wcout << name<<"\n";
+	cout << PhoneNumber << "\n";
+	wcout << address <<"\n";
+	//system("pause");
+}
+
+void People::doit() {
+	GetNumber();
+	GetName();
+	ClearPunctuation();
 }
