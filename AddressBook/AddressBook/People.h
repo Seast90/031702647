@@ -4,10 +4,12 @@
 #include<iostream>
 #include<cstdio>
 #include<locale>
+#include"Address.h"
 using namespace std;
 class People {
 public :
 	wstring Ori, name, address;
+	Address one;
 	long long PhoneNumber;
 	People(){}
 	People(wstring __str) {

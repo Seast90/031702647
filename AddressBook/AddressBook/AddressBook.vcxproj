@@ -115,9 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Address.h" />
     <ClInclude Include="People.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Address.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="People.cpp" />
   </ItemGroup>

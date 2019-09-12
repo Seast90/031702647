@@ -33,14 +33,15 @@ void People::GetName() {
 	address = str.substr(pos, len - pos + 1);
 }
 void People::GetAddress() {
-
+	one = Address(address);
+	one.Classification();
 }
 
 void People::Print() {
 	wcout << name<<"\n";
 	cout << PhoneNumber << "\n";
 	wcout << address <<"\n";
-	//system("pause");
+	system("pause");
 }
 
 void People::doit() {
