@@ -17,7 +17,6 @@ public :
 	long long PhoneNumber;
 	People(){}
 	People(string __str) {
-		Area::init();
 		Ori = Area::UTF8ToUnicode(__str); 
 	}
 	void ClearPunctuation();

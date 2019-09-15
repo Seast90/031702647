@@ -11,7 +11,8 @@ using namespace std;
 
 namespace Area {
 	std::wstring province[];
-	std::wstring rprovince[];
+	extern vector <wstring> city;
+	//std::wstring rprovince[];
 	int type[];
 	void init();
 	string UnicodeToUTF8(const wstring&);

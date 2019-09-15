@@ -5,10 +5,11 @@ int main() {
 	ofstream fout("2.txt");
 	//locale china("chs"); wcin.imbue(china); wcout.imbue(china);
 	People t;
+	Area::init();
 	string s;
 	fin >> s;
 	t = People(s);
 	t.doit();
-	t.Print();
+	//t.Print();
 	return 0;
 }

@@ -34,7 +34,8 @@ void People::GetName() {
 }
 void People::GetAddress() {
 	one = Address(address);
-	one.Classification();
+	one.doit();
+	//one.Classification();
 }
 
 void People::Print() {
@@ -51,4 +52,5 @@ void People::doit() {
 	GetNumber();
 	GetName();
 	ClearPunctuation();
+	GetAddress();
 }
