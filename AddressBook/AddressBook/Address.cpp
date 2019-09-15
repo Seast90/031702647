@@ -38,7 +38,7 @@ void Address::Classification() {
 	if (provtype == 1) {
 		downtown = prov + L'市';
 	}else 
-	for (int i = 0; i < 333; i++) {
+	for (int i = 0; i < 332; i++) {
 		int pos = 0, f = 1, len = (int)Area::city[i].size();
 		for (int j = 0,pos=0; j < len; j++) {
 			if (Area::city[i][j] != s[pos]) {
@@ -49,7 +49,10 @@ void Address::Classification() {
 		}
 		if (f) {
 			downtown = Area::city[i];
-			downtown += L'市';
+			if(i>=329)downtown += L'盟';
+			else if (i >= 318) downtown += L"自治州";
+			else if (i >= 312)downtown += L"地区";
+			else downtown += L'市';
 			int t = len;
 			if (s[t] == L'市') t++;
 			s = s.substr(t, (int)s.size() - t);
