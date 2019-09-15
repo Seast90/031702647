@@ -1,8 +1,5 @@
 #pragma once
-#include<string>
-#include<iostream>
-#include<cstdio>
-#include<locale>
+#include "Area.h"
 using namespace std;
 class Address {
 public:
@@ -12,4 +9,6 @@ public:
 		Ori = __str;
 	}
 	void Classification();
+	string UnicodeToUTF8(const wstring&);
+	wstring UTF8ToUnicode(const string&);
 };

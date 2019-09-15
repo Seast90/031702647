@@ -1,13 +1,12 @@
 #include "People.h"
 int main() {
-	locale china("chs");
+	ifstream fin("1.txt");
+	ifstream fn("1.out");
+	ofstream fout("2.txt");
+	//locale china("chs"); wcin.imbue(china); wcout.imbue(china);
 	People t;
-	wstring s;
-	wcin.imbue(china);
-	wcout.imbue(china);
-	wcin >> s;
-	//s = "Ä¦ôÉ°¢ÆÅ";
-	//wcout << s;
+	string s;
+	fin >> s;
 	t = People(s);
 	t.doit();
 	t.Print();

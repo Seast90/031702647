@@ -47,6 +47,6 @@ int main() {
 	while(wcin>>s){
 		wcout << s<<"\n";
 	}
-	system("pause");
+	//system("pause");
 	return 0;
 }

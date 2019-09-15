@@ -1,10 +1,14 @@
 //#pragmaexecution_character_set("utf-8");
+#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include<string>
 #include<iostream>
 #include<cstdio>
 #include<locale>
 #include"Address.h"
+#include <codecvt>
+#include<fstream>
+#include <cstdlib>
 using namespace std;
 class People {
 public :
@@ -12,8 +16,9 @@ public :
 	Address one;
 	long long PhoneNumber;
 	People(){}
-	People(wstring __str) {
-		Ori = __str; 
+	People(string __str) {
+		Area::init();
+		Ori = UTF8ToUnicode(__str); 
 	}
 	void ClearPunctuation();
 	void GetNumber();
@@ -21,5 +26,6 @@ public :
 	void GetName();
 	void Print();
 	void doit();
-	
+	string UnicodeToUTF8(const wstring&);
+	wstring UTF8ToUnicode(const string&);
 };

@@ -117,11 +117,17 @@
   <ItemGroup>
     <ClInclude Include="Address.h" />
     <ClInclude Include="People.h" />
+    <ClInclude Include="Area.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Address.cpp" />
+    <ClCompile Include="Area.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="People.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="1.txt" />
+    <Text Include="2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
