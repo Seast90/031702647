@@ -9,6 +9,4 @@ public:
 		Ori = __str;
 	}
 	void Classification();
-	string UnicodeToUTF8(const wstring&);
-	wstring UTF8ToUnicode(const string&);
 };

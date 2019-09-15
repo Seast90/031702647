@@ -39,11 +39,11 @@ void People::GetAddress() {
 
 void People::Print() {
 	ofstream fout("2.txt");
-	fout << UnicodeToUTF8(Area::province[1]) <<"\n";
+	fout << Area::UnicodeToUTF8(Area::province[1]) <<"\n";
 	//name = Area::province[1];
-	fout << UnicodeToUTF8(name)<<"\n";
+	fout << Area::UnicodeToUTF8(name)<<"\n";
 	fout << PhoneNumber << "\n";
-	fout << UnicodeToUTF8(address) <<"\n";
+	fout << Area::UnicodeToUTF8(address) <<"\n";
 	//system("pause");
 }
 
@@ -51,18 +51,4 @@ void People::doit() {
 	GetNumber();
 	GetName();
 	ClearPunctuation();
-}
-
-string People::UnicodeToUTF8(const wstring&s) {
-	string ret;
-	wstring_convert<codecvt_utf8<wchar_t> > wcv;
-	ret = wcv.to_bytes(s);
-	return ret;
-}
-
-wstring People::UTF8ToUnicode(const string &s) {
-	wstring ret;
-	wstring_convert<codecvt_utf8<wchar_t> > wcv;
-	ret = wcv.from_bytes(s);
-	return ret;
 }

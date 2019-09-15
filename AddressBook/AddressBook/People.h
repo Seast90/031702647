@@ -18,7 +18,7 @@ public :
 	People(){}
 	People(string __str) {
 		Area::init();
-		Ori = UTF8ToUnicode(__str); 
+		Ori = Area::UTF8ToUnicode(__str); 
 	}
 	void ClearPunctuation();
 	void GetNumber();
@@ -26,6 +26,4 @@ public :
 	void GetName();
 	void Print();
 	void doit();
-	string UnicodeToUTF8(const wstring&);
-	wstring UTF8ToUnicode(const string&);
 };
