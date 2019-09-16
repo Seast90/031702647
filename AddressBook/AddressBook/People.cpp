@@ -13,10 +13,10 @@ void People::GetNumber() {
 	for (int pos = 0; pos < len; pos++) {
 		if (str[pos] < '0' && str[pos] > '9') continue;
 		int cnt = 0;
-		PhoneNumber = 0;
+		PhoneNumber = L"";
 		for (int _pos = pos; _pos < len&&str[_pos] >= '0'&&str[_pos] <= '9'; _pos++) {
 			cnt++;
-			PhoneNumber = 10 * PhoneNumber + str[_pos] - '0';
+			PhoneNumber = PhoneNumber + str[_pos];
 		}
 		if (cnt == 11) {
 			Ori = Ori.substr(0, pos) + Ori.substr(pos + 11, len - pos - 10);
@@ -43,14 +43,24 @@ void People::Print() {
 	fout << Area::UnicodeToUTF8(Area::province[1]) <<"\n";
 	//name = Area::province[1];
 	fout << Area::UnicodeToUTF8(name)<<"\n";
-	fout << PhoneNumber << "\n";
+	fout << Area::UnicodeToUTF8(PhoneNumber) << "\n";
 	fout << Area::UnicodeToUTF8(address) <<"\n";
 	//system("pause");
 }
 
-void People::doit() {
+void People::GetAns(vector <wstring > &ans) {
+	ans.push_back(L"    {");
+	wstring s = L"        \"ÐÕÃû\": \"", t = L"\",";
+	ans.push_back(s + name + t);
+	s = L"        \"ÊÖ»ú\" : \"";
+	ans.push_back(s + PhoneNumber + t);
+	one.GetAns(ans);
+	ans.push_back(L"    },");
+}
+void People::doit(vector <wstring > &ans) {
 	GetNumber();
 	GetName();
 	ClearPunctuation();
 	GetAddress();
+	GetAns(ans);
 }

@@ -13,4 +13,5 @@ public:
 	void Classification();
 	void doit();
 	void print();
+	void GetAns(vector<wstring> &);
 };

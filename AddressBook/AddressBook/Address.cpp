@@ -49,31 +49,42 @@ void Address::Classification() {
 		}
 		if (f) {
 			downtown = Area::city[i];
-			if(i>=329)downtown += L'盟';
-			else if (i >= 318) downtown += L"自治州";
-			else if (i >= 312)downtown += L"地区";
-			else downtown += L'市';
 			int t = len;
-			if (s[t] == L'市') t++;
+			if (i >= 329) {
+				downtown += L'盟';
+				if (s[t] == L'盟') t++;
+			}
+			else if (i >= 318) {
+				downtown += L"自治州";
+				if (s[t] == L'自' && s[t + 1] == L'治' && s[t + 2] == L'州') t += 3;
+			}
+			else if (i >= 312) {
+				downtown += L"地区";
+				if (s[t] == L'地' && s[t + 1] == L'区') t++;
+			}
+			else {
+				downtown += L'市';
+				if (s[t] == L'市') t++;
+			}
 			s = s.substr(t, (int)s.size() - t);
 			break;
 		}
 	}
 	for(int i=0;i<(int)s.size();i++)
-		if (s[i] == L'区' || s[i] == L'县') {
+		if (s[i] == L'区' || s[i] == L'县' || s[i]==L'市') {
 			region = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
 	for (int i = 0; i<(int)s.size(); i++)
-		if (s[i] == L'镇' ||( s[i] == L'街'&&s[i+1] !=L'镇' )|| s[i]==L'道') {
+		if (s[i] == L'镇' ||( s[i] == L'街'&&s[i+1] !=L'镇' )|| s[i]==L'道' || s[i]==L'乡' || s[i] == L'村') {
 			if (s[i] == L'街' && s[i + 1] == L'道') i++;
 			street = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
 	for (int i = 0; i<(int)s.size(); i++)
-		if (s[i] == L'路') {
+		if (s[i] == L'路' || s[i] ==L'巷' || s[i]==L'街' || s[i]==L'道') {
 			road = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
@@ -98,7 +109,20 @@ void Address::print() {
 	fout << Area::UnicodeToUTF8(number) << "\n";
 	fout << Area::UnicodeToUTF8(build) << "\n";
 }
+
+void Address::GetAns(vector<wstring> &ans) {
+	ans.push_back(L"        \"地址\": [");
+	wstring s = L"            \"", t = L"\",", tend = L"\"";
+	ans.push_back(s + prov + t); 
+	ans.push_back(s + downtown + t);
+	ans.push_back(s + region + t);
+	ans.push_back(s + street + t);
+	ans.push_back(s + road + t);
+	ans.push_back(s + number + t);
+	ans.push_back(s + build + tend);
+	ans.push_back(L"        ]");
+}
 void Address::doit() {
 	Classification();
-	print();
+	//print();
 }

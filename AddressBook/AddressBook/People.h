@@ -14,7 +14,7 @@ class People {
 public :
 	wstring Ori, name, address;
 	Address one;
-	long long PhoneNumber;
+	wstring PhoneNumber;
 	People(){}
 	People(string __str) {
 		Ori = Area::UTF8ToUnicode(__str); 
@@ -24,5 +24,6 @@ public :
 	void GetAddress();
 	void GetName();
 	void Print();
-	void doit();
+	void GetAns(vector <wstring > &);
+	void doit(vector <wstring > &);
 };

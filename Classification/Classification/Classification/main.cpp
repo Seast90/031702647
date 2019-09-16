@@ -44,8 +44,9 @@ int main() {
 	wstring s;
 	wcin >> s;
 	//wcout << s;
+	wchar_t c = L'"';
 	while(wcin>>s){
-		wcout << s<<"\n";
+		wcout << "L" <<c <<s<<c << ",";
 	}
 	//system("pause");
 	return 0;
