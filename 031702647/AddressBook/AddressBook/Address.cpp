@@ -56,15 +56,15 @@ void Address::Classification() {
 				downtown += s.substr(t, 2 + o);
 				t += 2 + o;
 			}
-			if (i >= 329) {
+			if (i >= 332) {
 				downtown += L'盟';
 				if (s[t] == L'盟') t++;
 			}
-			else if (i >= 303) {
+			else if (i >= 302) {
 				downtown += L"自治州";
 				if (s[t] == L'自' && s[t + 1] == L'治' && s[t + 2] == L'州') t += 3;
 			}
-			else if (i >= 298) {
+			else if (i >= 296) {
 				downtown += L"地区";
 				if (s[t] == L'地' && s[t + 1] == L'区') t++;
 			}
@@ -77,7 +77,7 @@ void Address::Classification() {
 		}
 	}
 	for(int i=0;i<(int)s.size();i++)
-		if (s[i] == L'区' || s[i] == L'县' || s[i]==L'市') {
+		if (s[i] == L'区' || s[i] == L'县' || s[i]==L'市' || s[i] == L'旗') {
 			region = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;

@@ -42,12 +42,19 @@ int main() {
 	wcin.imbue(china);
 	wcout.imbue(china);
 	wstring s;
-	wcin >> s;
+	//wcin >> s;
 	//wcout << s;
 	wchar_t c = L'"';
+	int t = 0;
 	while(wcin>>s){
+		//t++;
 		wcout << "L" <<c <<s<<c << ",";
 	}
+	/*while (wcin >> s) {
+		//t++;
+		wcout <<  s << "\n";
+	}*/
+	//cout << t;
 	//system("pause");
 	return 0;
 }
