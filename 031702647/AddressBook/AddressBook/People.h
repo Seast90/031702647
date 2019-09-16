@@ -1,5 +1,5 @@
 //#pragmaexecution_character_set("utf-8");
-#define _CRT_SECURE_NO_WARNINGS
+//#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include<string>
 #include<iostream>
