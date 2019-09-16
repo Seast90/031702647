@@ -50,15 +50,16 @@ void Address::Classification() {
 		if (f) {
 			downtown = Area::city[i];
 			int t = len;
+			if (s[t + 1] == L'族') t += 2;
 			if (i >= 329) {
 				downtown += L'盟';
 				if (s[t] == L'盟') t++;
 			}
-			else if (i >= 318) {
+			else if (i >= 307) {
 				downtown += L"自治州";
 				if (s[t] == L'自' && s[t + 1] == L'治' && s[t + 2] == L'州') t += 3;
 			}
-			else if (i >= 312) {
+			else if (i >= 301) {
 				downtown += L"地区";
 				if (s[t] == L'地' && s[t + 1] == L'区') t++;
 			}
