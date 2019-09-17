@@ -17,6 +17,7 @@ public :
 	wstring PhoneNumber;
 	People(){}
 	People(string __str) {
+		name = address = PhoneNumber = L"";
 		Ori = Area::UTF8ToUnicode(__str); 
 	}
 	void ClearPunctuation();
