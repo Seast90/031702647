@@ -15,9 +15,11 @@ public :
 	wstring Ori, name, address;
 	Address one;
 	wstring PhoneNumber;
+	bool Type1, Type2, Type3;
 	People(){}
 	People(string __str) {
 		name = address = PhoneNumber = L"";
+		Type1 = Type2 = Type3 = 1;
 		Ori = Area::UTF8ToUnicode(__str); 
 	}
 	void ClearPunctuation();

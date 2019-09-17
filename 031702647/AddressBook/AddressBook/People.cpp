@@ -20,9 +20,10 @@ void People::GetNumber() {
 		}
 		if (cnt == 11) {
 			Ori = Ori.substr(0, pos) + Ori.substr(pos + 11, len - pos - 10);
-			break;
+			return;
 		}
 	}
+	Type1 = 0;
 }
 void People::GetName() {
 	wstring str = Ori;
@@ -30,6 +31,7 @@ void People::GetName() {
 	while (pos < len && str[pos] != L',' && str[pos] != '，')
 		pos++;
 	name = str.substr(0, pos);
+	if (pos == 0) Type2 = 0;
 	address = str.substr(pos, len - pos + 1);
 }
 void People::GetAddress() {
@@ -63,4 +65,7 @@ void People::doit(vector <wstring > &ans) {
 	ClearPunctuation();
 	GetAddress();
 	GetAns(ans);
+	/*if (Type1) cout << "手机号码格式错误！\n";
+	if (Type2) cout << "姓名缺失！\n";
+	if (Type3) cout << "地址格式错误！\n"; */
 }
