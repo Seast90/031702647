@@ -22,6 +22,11 @@ public :
 		Type1 = Type2 = Type3 = 1;
 		Ori = Area::UTF8ToUnicode(__str); 
 	}
+	People(wstring __str) {
+		name = address = PhoneNumber = L"";
+		Type1 = Type2 = Type3 = 1;
+		Ori = __str;
+	}
 	void ClearPunctuation();
 	void GetNumber();
 	void GetAddress();
