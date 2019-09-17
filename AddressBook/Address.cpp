@@ -82,8 +82,8 @@ void Address::Classification() {
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
-	for (int i = 0; i<(int)s.size(); i++)
-		if (s[i] == L'镇' ||( s[i] == L'街'&&s[i+1] !=L'镇' )|| s[i]==L'道' || s[i]==L'乡' || s[i] == L'村') {
+	for (int i = 0; i < (int)s.size(); i++)
+		if (s[i] == L'镇' || (s[i] == L'街'&&s[i + 1] != L'镇') || (s[i] == L'道' && s[i + 1] != L'口') || s[i] == L'乡' || s[i] == L'村') {
 			if (s[i] == L'街' && s[i + 1] == L'道') i++;
 			street = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
@@ -95,6 +95,7 @@ void Address::Classification() {
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
+	if (road == L"") road = street, street = L"";
 	for (int i = 0; i<(int)s.size(); i++)
 		if (s[i] == L'号') {
 			number = s.substr(0, i + 1);
