@@ -76,20 +76,21 @@ void Address::Classification() {
 			break;
 		}
 	}
-	for(int i=0;i<(int)s.size();i++)
+	int o = 5;
+	for (int i = 0; i < (int)s.size() - o; i++)
 		if (s[i] == L'区' || s[i] == L'县' || s[i]==L'市' || s[i] == L'旗') {
 			region = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
-	for (int i = 0; i < (int)s.size(); i++)
+	for (int i = 0; i < (int)s.size() - o; i++)
 		if (s[i] == L'镇' || (s[i] == L'街'&&s[i + 1] != L'镇') || (s[i] == L'道' && s[i + 1] != L'口') || s[i] == L'乡' || s[i] == L'村') {
 			if (s[i] == L'街' && s[i + 1] == L'道') i++;
 			street = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
-	for (int i = 0; i<(int)s.size(); i++)
+	for (int i = 0; i < (int)s.size() - o; i++)
 		if (s[i] == L'路' || s[i] ==L'巷' || s[i]==L'街' || s[i]==L'道') {
 			road = s.substr(0, i + 1);
 			s = s.substr(i + 1, (int)s.size() - i - 1);
