@@ -1,7 +1,10 @@
 #include "People.h"
-int main() {
-	ifstream fin("1.txt");
-	ofstream fout("2.txt");
+int main(int argv, char **argc) {
+	if (argv < 3) return 0;
+	ifstream fin;
+	fin.open(argc[1]);
+	ofstream fout;
+	fout.open(argc[2]);
 	//locale china("chs"); wcin.imbue(china); wcout.imbue(china);
 	Area::init();
 	string s;
@@ -15,6 +18,8 @@ int main() {
 	for (int i = 0; i < (int)ans.size(); i++) {
 		fout << Area::UnicodeToUTF8(ans[i]) << "\n";
 	}
+	fin.close();
+	fout.close();
 	//t.Print();
 	return 0;
 }
