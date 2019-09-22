@@ -11,6 +11,7 @@ int main(int argv, char **argc) {
 	vector < wstring > ans;
 	ans.push_back(L"[");
 	while (fin >> s) {
+		s=s.substr(2,(int)s.size() - 2);
 		People t = People(s);
 		t.doit(ans);
 	}
