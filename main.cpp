@@ -1,4 +1,5 @@
 #include "People.h"
+string s[2005];
 int main(int argv, char **argc) {
 	if (argv < 3) return 0;
 	ifstream fin;
@@ -7,13 +8,16 @@ int main(int argv, char **argc) {
 	fout.open(argc[2]);
 	//locale china("chs"); wcin.imbue(china); wcout.imbue(china);
 	Area::init();
-	string s;
+	int n,cnt=0;
 	vector < wstring > ans;
 	ans.push_back(L"[");
-	while (fin >> s) {
-		int t1 = s[0] - '0';
-		s=s.substr(2,(int)s.size() - 2);
-		People t = People(s, t1);
+        while(fin>>s[++cnt]);
+        n=cnt;
+	for(int i=1;i<=n;i++) {
+                string str =s[i];
+		int t1 = str[0] - '0';
+		str=str.substr(2,(int)str.size() - 2);
+		People t = People(str, t1, i, n);
 		t.doit(ans);
 	}
 	ans.push_back(L"]");
