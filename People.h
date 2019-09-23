@@ -34,6 +34,6 @@ public :
 	void GetAddress();
 	void GetName();
 	void Print();
-	void GetAns(vector <wstring > &);
+	void GetAns(vector <wstring > &,int,int);
 	void doit(vector <wstring > &,int,int);
 };
