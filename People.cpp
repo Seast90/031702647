@@ -3,7 +3,7 @@ void People::ClearPunctuation() {
 	wstring str = address, s=L"";
 	int len = str.size();
 	for (int i = 0; i < len; i++)
-		if (str[i] != ',' && str[i] != L'£¬' && str[i] != '.' && str[i] != L'¡£')
+		if (str[i] != ',' && str[i] != L'ï¼Œ' && str[i] != '.' && str[i] != L'ã€‚')
 			s = s + str[i];
 	address = s;
 }
@@ -28,7 +28,7 @@ void People::GetNumber() {
 void People::GetName() {
 	wstring str = Ori;
 	int pos = 0, len = str.size();
-	while (pos < len && str[pos] != L',' && str[pos] != '£¬')
+	while (pos < len && str[pos] != L',' && str[pos] != 'ï¼Œ')
 		pos++;
 	name = str.substr(0, pos);
 	if (pos == 0) Type2 = 0;
@@ -52,20 +52,20 @@ void People::Print() {
 
 void People::GetAns(vector <wstring > &ans) {
 	ans.push_back(L"    {");
-	wstring s = L"        \"ĞÕÃû\": \"", t = L"\",";
+	wstring s = L"        \"å§“å\": \"", t = L"\",";
 	ans.push_back(s + name + t);
-	s = L"        \"ÊÖ»ú\" : \"";
+	s = L"        \"æ‰‹æœº\" : \"";
 	ans.push_back(s + PhoneNumber + t);
 	one.GetAns(ans);
 	ans.push_back(L"    },");
 }
-void People::doit(vector <wstring > &ans) {
+void People::doit(vector <wstring > &ans,int t,int n) {
 	GetNumber();
 	GetName();
 	ClearPunctuation();
 	GetAddress();
 	GetAns(ans);
-	/*if (Type1) cout << "ÊÖ»úºÅÂë¸ñÊ½´íÎó£¡\n";
-	if (Type2) cout << "ĞÕÃûÈ±Ê§£¡\n";
-	if (Type3) cout << "µØÖ·¸ñÊ½´íÎó£¡\n"; */
+	/*if (Type1) cout << "æ‰‹æœºå·ç æ ¼å¼é”™è¯¯ï¼\n";
+	if (Type2) cout << "å§“åç¼ºå¤±ï¼\n";
+	if (Type3) cout << "åœ°å€æ ¼å¼é”™è¯¯ï¼\n"; */
 }
