@@ -50,21 +50,23 @@ void People::Print() {
 	//system("pause");
 }
 
-void People::GetAns(vector <wstring > &ans) {
+void People::GetAns(vector <wstring > &ans,int t,int n) {
 	ans.push_back(L"    {");
 	wstring s = L"        \"姓名\": \"", t = L"\",";
 	ans.push_back(s + name + t);
 	s = L"        \"手机\" : \"";
 	ans.push_back(s + PhoneNumber + t);
 	one.GetAns(ans);
+        if(t!=n)
 	ans.push_back(L"    },");
+        else ans.push_back(L"    }");
 }
 void People::doit(vector <wstring > &ans,int t,int n) {
 	GetNumber();
 	GetName();
 	ClearPunctuation();
 	GetAddress();
-	GetAns(ans);
+	GetAns(ans,t,n);
 	/*if (Type1) cout << "手机号码格式错误！\n";
 	if (Type2) cout << "姓名缺失！\n";
 	if (Type3) cout << "地址格式错误！\n"; */
