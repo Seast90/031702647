@@ -50,14 +50,14 @@ void People::Print() {
 	//system("pause");
 }
 
-void People::GetAns(vector <wstring > &ans,int t,int n) {
+void People::GetAns(vector <wstring > &ans,int t1,int n) {
 	ans.push_back(L"    {");
 	wstring s = L"        \"姓名\": \"", t = L"\",";
 	ans.push_back(s + name + t);
 	s = L"        \"手机\" : \"";
 	ans.push_back(s + PhoneNumber + t);
 	one.GetAns(ans);
-        if(t!=n)
+        if(t1!=n)
 	ans.push_back(L"    },");
         else ans.push_back(L"    }");
 }
