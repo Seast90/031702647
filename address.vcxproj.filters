@@ -15,39 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="People.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Address.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Area.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="People.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="People.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Area.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="People.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="Address.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Area.cpp">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="1.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="2.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-    <Text Include="3.txt">
-      <Filter>资源文件</Filter>
-    </Text>
+    <None Include="README.md">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include=".gitignore">
+      <Filter>头文件</Filter>
+    </None>
   </ItemGroup>
 </Project>
