@@ -11,8 +11,9 @@ int main(int argv, char **argc) {
 	vector < wstring > ans;
 	ans.push_back(L"[");
 	while (fin >> s) {
+		int t1 = s[0] - '0';
 		s=s.substr(2,(int)s.size() - 2);
-		People t = People(s);
+		People t = People(s, t1);
 		t.doit(ans);
 	}
 	ans.push_back(L"]");

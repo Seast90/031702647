@@ -35,7 +35,7 @@ void People::GetName() {
 	address = str.substr(pos, len - pos + 1);
 }
 void People::GetAddress() {
-	one = Address(address);
+	one = Address(address, ty);
 	one.doit();
 	//one.Classification();
 }

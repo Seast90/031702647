@@ -16,10 +16,12 @@ public :
 	Address one;
 	wstring PhoneNumber;
 	bool Type1, Type2, Type3;
+	int ty;
 	People(){}
-	People(string __str) {
+	People(string __str, int __ty) {
 		name = address = PhoneNumber = L"";
 		Type1 = Type2 = Type3 = 1;
+		ty = __ty;
 		Ori = Area::UTF8ToUnicode(__str); 
 	}
 	People(wstring __str) {

@@ -90,6 +90,10 @@ void Address::Classification() {
 			s = s.substr(i + 1, (int)s.size() - i - 1);
 			break;
 		}
+	if (Ty == 1) {
+		Ori = s;
+		return;
+	}
 	for (int i = 0; i < (int)s.size() - o; i++)
 		if (s[i] == L'Â·' || s[i] ==L'Ïï' || s[i]==L'½Ö' || s[i]==L'µÀ') {
 			road = s.substr(0, i + 1);
@@ -125,9 +129,12 @@ void Address::GetAns(vector<wstring> &ans) {
 	ans.push_back(s + downtown + t);
 	ans.push_back(s + region + t);
 	ans.push_back(s + street + t);
-	ans.push_back(s + road + t);
-	ans.push_back(s + number + t);
-	ans.push_back(s + build + tend);
+	if (Ty != 1) {
+		ans.push_back(s + road + t);
+		ans.push_back(s + number + t);
+		ans.push_back(s + build + tend);
+	}
+	else ans.push_back(s + Ori + tend);
 	ans.push_back(L"        ]");
 }
 void Address::doit() {
