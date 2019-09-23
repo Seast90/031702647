@@ -17,8 +17,8 @@ int main(int argv, char **argc) {
                 string str =s[i];
 		int t1 = str[0] - '0';
 		str=str.substr(2,(int)str.size() - 2);
-		People t = People(str, t1, i, n);
-		t.doit(ans);
+		People t = People(str, t1);
+		t.doit(ans,i,n);
 	}
 	ans.push_back(L"]");
 	for (int i = 0; i < (int)ans.size(); i++) {
