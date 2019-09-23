@@ -35,5 +35,5 @@ public :
 	void GetName();
 	void Print();
 	void GetAns(vector <wstring > &);
-	void doit(vector <wstring > &);
+	void doit(vector <wstring > &,int,int);
 };
