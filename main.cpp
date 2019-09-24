@@ -11,8 +11,8 @@ int main(int argv, char **argc) {
 	int n,cnt=0;
 	vector < wstring > ans;
 	ans.push_back(L"[");
-        while(fin>>s[++cnt]);
-        n=cnt;
+    while(fin>>s[++cnt]);
+    n=cnt;
 	for(int i=1;i<=n;i++) {
                 string str =s[i];
 		int t1 = str[0] - '0';
