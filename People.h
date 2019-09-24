@@ -23,6 +23,7 @@ public :
 		Type1 = Type2 = Type3 = 1;
 		ty = __ty;
 		Ori = Area::UTF8ToUnicode(__str); 
+		Ori = Ori.substr(2, (int)Ori.size() - 2);
 	}
 	People(wstring __str) {
 		name = address = PhoneNumber = L"";
