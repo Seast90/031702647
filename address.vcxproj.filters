@@ -26,17 +26,25 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Address.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Area.cpp">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="People.cpp">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="Address.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include=".gitignore">
+      <Filter>头文件</Filter>
+    </None>
   </ItemGroup>
 </Project>
